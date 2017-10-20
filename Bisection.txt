@@ -1,0 +1,40 @@
+Function bisection(a As Double, b As Double, TOL As Double, N0 As Integer)
+    Dim i As Integer, FA As Double, FP As Double, p As Double
+    i = 1
+    FA = f(a)
+    
+For i = 1 To N0
+    p = a + (b - a) / 2
+    FP = f(p)
+    '--------------------------
+    If FP = 0 Or (b - a) / 2 < TOL Then
+        MsgBox ("The solution is " & p)
+    Exit Function
+    End If
+    '---------------------------
+    'i = i + 1
+    
+    If FA * FP > 0 Then
+        a = p
+        FA = FP
+    Else
+        b = p
+    End If
+
+Next i
+  
+MsgBox ("The solution is " & p)
+       
+End Function
+
+
+Function f(a As Double) As Double
+    f = a * a * a + 4 * a * a - 10
+End Function
+
+
+Sub main()
+
+Call bisection(1#, 2#, 0.0001, 1000)
+
+End Sub
