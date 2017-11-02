@@ -37,6 +37,22 @@ def _cumlativesum_(l):
 
 print(_cumlativesum_([1,2,3]))
 
+#another apporach, whithout using sum() function
+#user accumlater instead
+def _cumlativesumv2_(l):
+    res = []
+    index = 0
+    while index < len(l):
+        total = 0
+        j = 0
+        while j <= index:
+            total = total + l[j]
+            j = j + 1
+        index = index + 1
+        res.append(total)
+    return res
+
+print(_cumlativesumv2_([1,2,3]))
 
 
 
