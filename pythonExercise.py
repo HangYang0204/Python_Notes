@@ -8,23 +8,24 @@ import sys
 #most
 
 
-
 class solution(object):
     """Exercise object"""
     def sumdigits(self):
         """Exercise 1"""
-        intP = input('Enter your number: ')
+        try:
+            intP = int(input('Enter your number: '))
+        except ValueError:
+            print('Please Enter an integer: ')
+            sys.exit()
+
+        strP = str(intP)
         l = []
-        for char in intP:
+        for char in strP:
             l.append(int(char))
         self = sum(l)
         print(self)
     def countwords():
         """Exercise 2"""
-
-
-
-
 
 
 s = solution()
