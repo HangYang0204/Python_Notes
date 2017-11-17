@@ -88,4 +88,17 @@ def div_decorate(func):
 def get_text(name):
    return "lorem ipsum, {0} dolor sit amet".format(name)
 
+##print(get_text("hang"))
+#Now is the time to put all of them together
+def tags(tag_name):
+    def tags_decorate(func):
+        def wrapper(name):
+            return "<{0}>{1}<\{0}>".format(tag_name,name)
+        return wrapper
+    return tags_decorate
+@tags("p")
+@tags("strong")
+@tags("div")
+def get_text(name):
+   return "lorem ipsum, {0} dolor sit amet".format(name) 
 print(get_text("hang"))
