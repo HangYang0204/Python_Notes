@@ -1,4 +1,5 @@
 """Functions are first class citizens and you can assign them to variables!"""
+"""For more information, check out this https://www.thecodeship.com/patterns/guide-to-python-function-decorators/"""
 
 def greet0(name):
     return"hello " + name
