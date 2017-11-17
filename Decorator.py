@@ -70,3 +70,22 @@ a = abp_dec(p_dec)
 ##print(type(a))
 ##print(a("Hang"))
 #this functionality is call decorator.
+#The decorator example
+
+def strong_decorate(func):
+    def func_wrapper(name):
+        return "<strong>{0}</strong>".format(func(name))
+    return func_wrapper
+
+def div_decorate(func):
+    def func_wrapper(name):
+        return "<div>{0}</div>".format(func(name))
+    return func_wrapper
+
+@p_decorate
+@div_decorate
+@strong_decorate
+def get_text(name):
+   return "lorem ipsum, {0} dolor sit amet".format(name)
+
+print(get_text("hang"))
